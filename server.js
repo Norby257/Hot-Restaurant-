@@ -10,20 +10,20 @@ var PORT = 3000;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-//  routes
+//  routes for get request  - any way to make this more concise?
 app.get("/", function(req, res) {
   //  send back index html page
   res.sendFile(path.join(__dirname, "home.html"));
 });
 
-app.get("/view", function(req, res) {
+app.get("/viewtables.html", function(req, res) {
   //send view.html
-  res.sendFile(path.join(__dirname, "reservations.html"));
+  res.sendFile(path.join(__dirname, "viewtables.html"));
 });
 
-app.get("/make", function(req, res) {
+app.get("/reservations, function(req, res) {
   //send view.html
-  res.sendFile(path.join(__dirname, "make.html"));
+  res.sendFile(path.join(__dirname, "reservations.html"));
 });
 
 //  start server
