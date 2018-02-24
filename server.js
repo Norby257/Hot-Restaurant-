@@ -17,8 +17,7 @@ app.get("/", function(req, res) {
 });
 
 app.get("/tables", function(req, res) {
-  //send view.html
-  res.sendFile(path.join(__dirname, "tables.html"));
+  res.sendFile(path.join(__dirname, "tables"));
 });
 
 app.get("/reservations", function(req, res) {
