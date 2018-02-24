@@ -1,4 +1,4 @@
-//dependenices
+//dependencies
 var express = require("express");
 var path = require("path");
 var bodyParser = require("body-parser");
@@ -7,28 +7,25 @@ var app = express();
 var PORT = 3000;
 
 //  body parsing code
-
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-//  routes
+//  routes for get request  - any way to make this more concise?
 app.get("/", function(req, res) {
   //  send back index html page
-  res.sendFile(path.join(__dirname, "index.html"));
+  res.sendFile(path.join(__dirname, "home.html"));
 });
 
-app.get("/view", function(req, res) {
-  //send view.html
-  res.sendFile(path.join(__dirname, "view.html"));
+app.get("/tables", function(req, res) {
+  res.sendFile(path.join(__dirname, "tables"));
 });
 
-app.get("/make", function(req, res) {
+app.get("/reservations", function(req, res) {
   //send view.html
-  res.sendFile(path.join(__dirname, "make.html"));
+  res.sendFile(path.join(__dirname, "reservations.html"));
 });
 
 //  start server
-
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
 });
